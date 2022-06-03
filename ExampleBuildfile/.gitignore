@@ -13,6 +13,10 @@ TOOLS/**
 
 BIN/**
 
+# We don't want to include our base ROM.
+
+/*.sfc
+
 # We don't want to include any files that only apply to us.
 
 *.sublime-workspace

@@ -35,7 +35,7 @@ Your choice of assembler has a huge impact on the structure of your buildfile an
 
 For the GBA Fire Emblem games, people have repurposed [Nintenlord's `E`vent `A`ssembler](https://feuniverse.us/t/event-assembler/1749) from a tool designed to edit a game's event scripts into a general-purpose assembler. EA has decent usability for inserting data for GBA games, and has been used for other games apart from GBAFE like [The Minish Cap](https://github.com/minishmaker).
 
-For the SNES Fire Emblem games, I recommend [64tass](https://sourceforge.net/projects/tass64/), and it's what I'll be using for the rest of this thread.
+For the SNES Fire Emblem games, I recommend [64tass](https://sourceforge.net/projects/tass64/), and it's what I'll be using for the rest of this thread. Click the link and download it. If you're on Linux, you'll need to compile the executable, but hopefully I don't need to tell you how to do that if you're comfortable using Linux.
 
 Generally, assemblers are [command-line](https://en.wikipedia.org/wiki/Command-line_interface) tools, meaning that the way you use them is by typing in a text command into a shell such as `PowerShell` or `Command Prompt` on Windows or (`ba`)`sh` on Linux. For people who are only used to graphical user interfaces, this might seem scary. Before we get into the thick of things, it'll be useful if you spend a little bit of time looking up the basic usage of whichever shell is appropriate for you.
 
@@ -93,5 +93,27 @@ In our `root` folder, we're going to put some subfolders named `BIN`, `SRC`, `TO
 
 The `TOOLS` folder is where we'll put the tools that'll help us process our component files, along with our assembler. Go and put the `64tass` executable in here.
 
+Now, we put our base ROM in our `<root>` folder. Since this guide is focused on FE5, this'll be a clean, unedited ROM version of Fire Emblem: Thracia 776 called `FE5.sfc`.
 
+#### The build script
+
+In our `<root>` folder, we'll create our main build script. We want it to be clearly-named. I'm going to go with `Build.asm`. The `.asm` extension here was chosen so that my text editor can highlight its contents nicely, but the actual choice of extension name doesn't matter. File extensions don't dictate the contents of a file, so just try to pick something and be consistent. For files that get are read by the assembler and put things into the ROM I'll be using `.asm`.
+
+Anyway, in this file we'll just put a single line to make sure things are working:
+
+```
+.warn "Hello World!"
+```
+
+Now, we'll open our shell and navigate to our `<root>` folder and run `64tass` like so:
+
+```
+.\TOOLS\64tass.exe -o ".\BIN\Example.sfc" ".\Build.asm"
+```
+
+This will be slightly different depending on a few things. You should change `".\BIN\Example.sfc"` to whatever you want the output to be named. You should change `".\Build.asm"` to match your build script's name. On Linux, your backslashes will be forward slashes and the executable will probably not have an extension.
+
+![The result](Images/4.png)
+
+If everything worked, you should see something like this.
 
