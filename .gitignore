@@ -1,0 +1,8 @@
+
+# This is a .gitignore file, it specifies patterns of files that
+# we don't want to appear in our Git repository. You can read about them
+# here: https://git-scm.com/docs/gitignore
+
+# We don't want to include any files that only apply to us.
+
+*.sublime-workspace
