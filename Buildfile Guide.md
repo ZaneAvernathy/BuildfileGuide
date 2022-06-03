@@ -1,5 +1,5 @@
 
-If you hang out around me or in FEU long enough, you'll eventually hear someone mention `buildfiles`. This thread will talk about what a buildfile is, tell you why they're neat, show you how to start/maintain one, and give you some tips and tricks based on my experiences.
+If you hang out around me or in FEU long enough, you'll eventually hear someone mention `buildfiles`. This guide will talk about what a buildfile is, tell you why they're neat, show you how to start/maintain one, and give you some tips and tricks based on my experiences.
 
 ### What is a "buildfile"?
 
@@ -35,7 +35,7 @@ Your choice of assembler has a huge impact on the structure of your buildfile an
 
 For the GBA Fire Emblem games, people have repurposed [Nintenlord's `E`vent `A`ssembler](https://feuniverse.us/t/event-assembler/1749) from a tool designed to edit a game's event scripts into a general-purpose assembler. EA has decent usability for inserting data for GBA games, and has been used for other games apart from GBAFE like [The Minish Cap](https://github.com/minishmaker).
 
-For the SNES Fire Emblem games, I recommend [64tass](https://sourceforge.net/projects/tass64/), and it's what I'll be using for the rest of this thread. Click the link and download it. If you're on Linux, you'll need to compile the executable, but hopefully I don't need to tell you how to do that if you're comfortable using Linux.
+For the SNES Fire Emblem games, I recommend [64tass](https://sourceforge.net/projects/tass64/), and it's what I'll be using for the rest of this guide. Click the link and download it. If you're on Linux, you'll need to compile the executable, but hopefully I don't need to tell you how to do that if you're comfortable using Linux.
 
 Generally, assemblers are [command-line](https://en.wikipedia.org/wiki/Command-line_interface) tools, meaning that the way you use them is by typing in a text command into a shell such as `PowerShell` or `Command Prompt` on Windows or (`ba`)`sh` on Linux. For people who are only used to graphical user interfaces, this might seem scary. Before we get into the thick of things, it'll be useful if you spend a little bit of time looking up the basic usage of whichever shell is appropriate for you.
 
