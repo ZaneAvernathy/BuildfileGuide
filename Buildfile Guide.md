@@ -117,3 +117,27 @@ This will be slightly different depending on a few things. You should change `".
 
 If everything worked, you should see something like this.
 
+It'd be a real pain to write this line out every time, so let's automate this. On Windows, we're going to make a new text file called `Build.bat` in our `<root>` folder with the contents
+
+```
+mkdir ".\BIN"
+.\TOOLS\64tass.exe -o ".\BIN\Example.sfc" ".\Build.asm"
+pause
+```
+
+This is a batch script. You can run this file like a program and it'll open a shell and act like you typed in these lines. The first line, `mkdir ".\BIN"` creates our output directory if it doesn't exist. It's not really necessary, but it might help out later. The last line, `pause` simply keeps the shell open until you press a button, so that you can catch any error messages or read diagnostics. Without it, the shell would close automatically.
+
+On Linux, you can make a shell script named something like `Build.sh` with the contents
+
+```
+mkdir "./BIN" -p
+./TOOLS/64tass -o "./BIN/Example.sfc" "./Build.asm"
+$SHELL
+```
+
+The `$SHELL` at the end is so that we end up with a shell window at the end.
+
+Now, instead of opening our shell and running commands, we can just run the script and it'll build our hack. If you've seen GBAFE EA buildfiles, this is what the `MAKE_HACK` script does.
+
+This script is where we'll automate processing our component files, too. Later, during the tips and tricks section, we'll have an even more convenient replacement for this, but for now we'll continue on.
+
